@@ -8,15 +8,17 @@ namespace Cars_and_Fruit
 {
     public class Vehicle
     {
-        public string engine_type = "gas";
+        public string engine_type = "gas";  // Vehicle field
 
+        //Fields
         protected string color;
         protected string name;
-        protected int maxSpeed; 
+        protected int maxSpeed; //field 
         protected int year;
 
+        //Properties
         public string Name
-        { 
+        { //property
             get { return name; }
             set { name = value; }
         }
@@ -29,7 +31,7 @@ namespace Cars_and_Fruit
         public int Year
         {
             get { return year; }
-            
+            //set { year = value; }
             set
             {
                 if (value < 1980)
@@ -43,8 +45,27 @@ namespace Cars_and_Fruit
             }
         }
 
+        public Vehicle(string nameName, string colorName, int yearValue, int maxSpeedValue)
+        {
+            name = nameName;
+            color = colorName;
+            year = yearValue;
+            maxSpeed = maxSpeedValue;
+        }
 
-        public void honk()            
+        public Vehicle(string nameName, string colorName, int yearValue, int maxSpeedValue, string eng_type)
+        {
+            name = nameName;
+            color = colorName;
+            year = yearValue;
+            maxSpeed = maxSpeedValue;
+            engine_type = eng_type;
+        }
+        public Vehicle(string nameName)
+        {
+            name = nameName;
+        }
+        public void honk()
         {
             Console.WriteLine("Tuut, tuut!");
         }

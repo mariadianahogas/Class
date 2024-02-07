@@ -3,66 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
-namespace Cars_and_Fruit { 
+namespace Cars_and_Fruit
+{
     public class Car : Vehicle
     {
-
-      
-        private string color;
-        private string name;
-        private int maxSpeed; 
-        private int year;
-
+        private int carSeats;
         
-        public string Name
-        { 
-            get { return name; }
-            set { name = value; }
-        }
-        public string Color
+        public int CarSeats { get; set; }
+
+        public Car(string nameName, string colorName, int yearValue, int maxSpeedValue, int carSeatsNo) : base(nameName, colorName, yearValue, maxSpeedValue)
         {
-            get { return color; }
-            set { color = value; }
+            carSeats = carSeatsNo;
         }
 
-        public int Year
+        public Car(string nameName, string colorName, int yearValue, int maxSpeedValue, string eng_type, int carSeatsNo) : base(nameName, colorName, yearValue, maxSpeedValue, eng_type)
         {
-            get { return year; }
-            
-            set
-            {
-                if (value < 1980)
-                {
-                    throw new Exception("Please pass a correct value");
-                }
-                else
-                {
-                    year = value;
-                }
-            }
+            carSeats = carSeatsNo;
         }
-
-       
-        public Car(string nameName, string colorName, int yearValue, int maxSpeedValue)
+        public Car(string nameName, int carSeatsNo) : base(nameName)
         {
-            name = nameName;
-            color = colorName;
-            year = yearValue;
-            maxSpeed = maxSpeedValue;
-        }
-
-        public Car(string nameName, string colorName, int yearValue, int maxSpeedValue, string eng_type)
-        {
-            name = nameName;
-            color = colorName;
-            year = yearValue;
-            maxSpeed = maxSpeedValue;
-            engine_type = eng_type;
-        }
-        public Car(string nameName)
-        {
-            name = nameName;
+            carSeats = carSeatsNo;
         }
         public void fullThrottle()
         {

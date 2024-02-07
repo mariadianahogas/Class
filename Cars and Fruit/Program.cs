@@ -10,9 +10,9 @@ namespace Cars_and_Fruit
     {
         static void Main(string[] args)
         {
-            Car Ford = new Car("Mustang", "white", 2021, 100);
-            Car Opel = new Car("Astra", "blue", 2020, 120, "electric");
-            Car Volvo = new Car("XC-90");
+            Car Ford = new Car("Mustang", "white", 2021, 100, 5);
+            Car Opel = new Car("Astra", "blue", 2020, 120, "electric", 4);
+            Car Volvo = new Car(nameName: "XC-90", carSeatsNo: 4);
 
             Console.WriteLine(Ford.Name);
             Console.WriteLine(Ford.Color);
@@ -34,7 +34,6 @@ namespace Cars_and_Fruit
             {
                 Volvo.Year = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Volvo age is: " + Volvo.Year);
-                
 
 
             }
